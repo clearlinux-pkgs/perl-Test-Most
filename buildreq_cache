@@ -1,0 +1,11 @@
+0.35
+perl(Algorithm::Diff)
+perl(Class::Data::Inheritable)
+perl(Devel::StackTrace)
+perl(Exception::Class)
+perl(Sub::Uplevel)
+perl(Test::Deep)
+perl(Test::Differences)
+perl(Test::Exception)
+perl(Test::Warn)
+perl(Text::Diff)
