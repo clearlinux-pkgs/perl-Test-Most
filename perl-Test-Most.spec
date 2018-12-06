@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Most
 Version  : 0.35
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/O/OV/OVID/Test-Most-0.35.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OV/OVID/Test-Most-0.35.tar.gz
 Summary  : unknown
