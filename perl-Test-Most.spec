@@ -30,6 +30,16 @@ perl Build.PL
 ./Build test
 ./Build install
 
+%package dev
+Summary: dev components for the perl-Test-Most package.
+Group: Development
+Provides: perl-Test-Most-devel = %{version}-%{release}
+Requires: perl-Test-Most = %{version}-%{release}
+
+%description dev
+dev components for the perl-Test-Most package.
+
+
 %prep
 %setup -q -n Test-Most-0.35
 
@@ -67,3 +77,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Most.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Most/Exception.pm
+
+%files dev
+%defattr(-,root,root,-)
+/usr/share/man/man3/Test::Most.3
+/usr/share/man/man3/Test::Most::Exception.3
