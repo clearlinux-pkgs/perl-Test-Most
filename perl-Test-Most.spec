@@ -4,12 +4,13 @@
 #
 Name     : perl-Test-Most
 Version  : 0.35
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/O/OV/OVID/Test-Most-0.35.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OV/OVID/Test-Most-0.35.tar.gz
-Summary  : Most commonly needed test functions and features.
+Summary  : unknown
 Group    : Development/Tools
 License  : GPL-1.0
+Requires: perl-Test-Most-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Algorithm::Diff)
 BuildRequires : perl(Class::Data::Inheritable)
@@ -40,14 +41,24 @@ Requires: perl-Test-Most = %{version}-%{release}
 dev components for the perl-Test-Most package.
 
 
+%package perl
+Summary: perl components for the perl-Test-Most package.
+Group: Default
+Requires: perl-Test-Most = %{version}-%{release}
+
+%description perl
+perl components for the perl-Test-Most package.
+
+
 %prep
 %setup -q -n Test-Most-0.35
+cd %{_builddir}/Test-Most-0.35
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -57,7 +68,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -77,10 +88,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Most.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Most/Exception.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Test::Most.3
 /usr/share/man/man3/Test::Most::Exception.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Most.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Most/Exception.pm
