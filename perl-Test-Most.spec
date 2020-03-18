@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Most
 Version  : 0.35
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/O/OV/OVID/Test-Most-0.35.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OV/OVID/Test-Most-0.35.tar.gz
 Summary  : unknown
@@ -96,5 +96,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Test/Most.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Test/Most/Exception.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Test/Most.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Test/Most/Exception.pm
